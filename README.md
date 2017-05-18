@@ -13,3 +13,8 @@ npm install
 ```
 gulp
 ```
+
+* ブラウザでアクセス
+```
+http://localhost:8000/
+```
