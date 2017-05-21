@@ -1,6 +1,7 @@
 ### Web Front Study
 
-* HTML + SCSS
+* HTML + SCSS  
+※imagesフォルダ配下の画像については各自配備すること
 
 #### 環境構築
 
