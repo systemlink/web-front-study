@@ -20,6 +20,7 @@ var runSequence = require('run-sequence');
 gulp.task('watch', function() {
   gulp.watch(path.join(assetsPath, 'css/**/*.scss'),['sass']);
   gulp.watch('./html/**/*.html', ['static']);
+  gulp.watch(path.join(assetsPath, 'images/*.*'), ['images']);
 });
 
 gulp.task('sass', function() {
@@ -36,8 +37,13 @@ gulp.task('static', function() {
     .pipe(gulp.dest('./dist'));
 });
 
+gulp.task('images', function() {
+  return gulp.src(path.join(assetsPath, 'images/*.*'))
+    .pipe(gulp.dest('./dist/images'));
+});
+
 gulp.task('build', [
-  'sass', 'static'
+  'sass', 'static', 'images'
 ]);
 
 gulp.task('server', function() {
