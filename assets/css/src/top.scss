@@ -1,8 +1,39 @@
-body {
-  color: blue;
-  .top {
-    h1 {
-      font-size: 56px;
+header{
+  .title{
+    font-weight: bold;
+    color: #BBB;
+  }
+}
+
+footer{
+  .title{
+    font-weight: bold;
+    color: #F50;
+  }
+}
+
+div{
+  &.update-info, &.description{ 
+    border: solid 2px #BBB;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+  }
+  &.index-top-btns{
+    display: flex;
+    a{
+      margin: 10px;
+      padding: 10px;
+      border: solid 2px #D00;
     }
+  }
+}
+
+table{
+  .sales-end{
+    color: #00F;
+  }
+  .new{
+    color: #F50;
   }
 }
