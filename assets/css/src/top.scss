@@ -1,39 +1,66 @@
-header{
-  .title{
-    font-weight: bold;
-    color: #BBB;
-  }
-}
+$h-title-color: #BBB;
 
-footer{
-  .title{
+#top {
+  .company-logo{
+    max-width: 10%;
+  }
+
+  .header-title {
+    font-weight: bold;
+    color: $h-title-color;
+  }
+
+  .footer-title {
     font-weight: bold;
     color: #F50;
   }
-}
 
-div{
-  &.update-info, &.description{ 
-    border: solid 2px #BBB;
-    border-radius: 10px;
-    margin: 10px;
-    padding: 10px;
-  }
-  &.index-top-btns{
-    display: flex;
-    a{
-      margin: 10px;
-      padding: 10px;
+  .index-top-btns {
+    a {
+      display: block;
+      height: 50px;
       border: solid 2px #D00;
+      text-align: center;
+      line-height: 50px;
+      text-decoration-line: none;
+      color: #000;
     }
   }
-}
 
-table{
-  .sales-end{
-    color: #00F;
+  .update-info,
+  .description { 
+    border: solid 2px #BBB;
+    border-radius: 10px;
+    padding: 20px;
+    width: 602px;
   }
-  .new{
-    color: #F50;
+
+  .color-table {
+    .sales-end {
+      color: #00F;
+    }
+    .new {
+      color: #F50;
+    }
+  }
+
+  @media screen and (min-width: 800px) {
+    .index-top-btns {
+      display: flex;
+      a {
+        width: 300px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 799px) {
+    .index-page-container {
+      font-size: x-small;
+    }
+    .index-top-btns {
+      a {
+        width: 600px;
+      }
+    }
   }
 }
