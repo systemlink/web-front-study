@@ -13,6 +13,8 @@ var autoprefixer = require('gulp-autoprefixer');
 
 var plumber = require('gulp-plumber');
 
+var notify  = require('gulp-notify');
+
 var webserver = require('gulp-webserver');
 
 var runSequence = require('run-sequence');
@@ -25,10 +27,10 @@ gulp.task('watch', function() {
 
 gulp.task('sass', function() {
     return gulp.src(path.join(assetsPath, 'css/**/*.scss'))
-        .pipe(plumber())
+        .pipe(plumber({errorHandler: notify.onError('<%= error.message %>')}))
+        .pipe(concat('main.css'))
         .pipe(sass({outputStyle: 'expanded'}))
         .pipe(autoprefixer())
-        .pipe(concat('main.css'))
         .pipe(gulp.dest('dist/css/'));
 });
 
