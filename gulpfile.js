@@ -26,11 +26,11 @@ gulp.task('watch', function() {
 });
 
 gulp.task('sass', function() {
-    return gulp.src(path.join(assetsPath, 'css/**/*.scss'))
+    return gulp.src(path.join(assetsPath, 'css/*.scss'))
         .pipe(plumber({errorHandler: notify.onError('<%= error.message %>')}))
-        .pipe(concat('main.css'))
         .pipe(sass({outputStyle: 'expanded'}))
         .pipe(autoprefixer())
+        .pipe(concat('main.css'))
         .pipe(gulp.dest('dist/css/'));
 });
 
