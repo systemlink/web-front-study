@@ -1,74 +1,8 @@
-#top {
-  color: $text-base-color;
-
-  .company-logo {
-    max-width: 10%;
-  }
-
-  .header-title {
-    display: block;
-    width: $base-width;
-    font-size: small;
-    font-weight: bold;
-    color: #BBB;
-  }
-
-  .footer-title {
-    font-weight: bold;
-    color: #F50;
-  }
-
-  .logo {
-    width: $base-width;
-  }
-
-  .index-top-btns {
-    display: flex;
-    margin: 30px 0px;
-    a {
-      display: block;
-      width: $buttom-width;
-      height: 50px;
-      border: solid 2px $border-buttom-color;
-      text-align: center;
-      line-height: 50px;
-      text-decoration-line: none;
-      color: #000;
+body {
+  color: $header-color;
+  .top {
+    h1 {
+      font-size: 56px;
     }
-  }
-
-  .update-info,
-  .description {
-    font-size: xx-small;
-    width: $base-width;
-    border: solid 2px #BBB;
-    border-radius: 10px;
-    margin: 30px 0px;
-    padding: 10px;
-    p {
-      margin: 0px;
-    }
-  }
-
-  .color-table {
-    table {
-      border-collapse: collapse;
-      width: $base-width;
-    }
-    td, th {
-      border: solid 1px $border-frame-color;
-      padding: 10px 10px;
-      text-align: center;
-    }
-    .sales-end {
-      color: #08F;
-    }
-    .new {
-      color: #F50;
-    }
-  }
-
-  .footer-copyright {
-    font-size: x-small;
   }
 }
