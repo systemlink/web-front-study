@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "browserify": "^14.3.0",
     "bootstrap": "^4.0.0-alpha.6",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
@@ -17,9 +18,11 @@
     "gulp-plumber": "^1.1.0",
     "gulp-sass": "^3.1.0",
     "gulp-webserver": "^0.9.1",
-    "run-sequence": "^1.2.2"
+    "run-sequence": "^1.2.2",
+    "vinyl-source-stream": "^1.1.0"
   },
   "path": {
-    "assetsDir": "./assets/"
+    "assets": "./assets/",
+    "dist": "./dist/"
   }
 }
