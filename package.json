@@ -24,8 +24,5 @@
   "path": {
     "assets": "./assets/",
     "dist": "./dist/"
-  },
-  "dependencies": {
-    "angular": "1.4.3"
   }
 }
