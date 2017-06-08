@@ -1,17 +1,72 @@
 #proposals-page-container {
-  margin-top: 65px;
+  margin-top: 70px;
+  margin-bottom: 150px;
+  overflow: hidden;
   .create-plan {
+    margin: 20px auto 10px;
+    padding: 15px;
     width: 100%;
     border: 2px solid $border-frame-color;
-    border-radius: 5px;
+    border-radius: 4px;
+    img {
+      margin-right: 10px;
+      width: 20px;
+    }
     a {
-      display: inline-block;
+      display: block;
       width: 100%;
       height: 100%;
-      padding: 10px;
       font-size: 24px;
-      color: #108ec1;
+      color: $main-color;
       text-align: center;
+    }
+  }
+  .plan-list {
+    margin: 35px auto 10px;
+    padding: 15px 0px;
+    width: 100%;
+    border: 2px solid $border-frame-color;
+    border-radius: 4px;
+    font-size: xx-small;
+    .plan-left {
+      display: inline-block;
+      height: 100%;
+      border-right: 1px solid $border-frame-color;
+      .plan-kind {
+        display: block;
+        width: 100%;
+        padding: 5px 10px;
+        border-radius: 2px;
+        color: #fff;
+        background-color: $main-color;
+      }
+      .plan-title {
+        display: block;
+        margin: 10px 20px;
+        .plan-title-no {
+          color: $main-color;
+          margin-right: 5px;
+        }
+      }
+      .plan-buttom {
+        text-align: right;
+        > a {
+          display: inline-block;
+          padding: 10px 0px;
+          width: 30%;
+          border-radius: 5px;
+          text-align: center;
+        }
+      }
+      .plan-edit {
+        margin-right: 10px;
+        color: $edit-color;
+        border: 2px solid $edit-color;
+      }
+      .plan-delete {
+        color: $delete-color;
+        border: 2px solid $delete-color;
+      }
     }
   }
 }

@@ -11,6 +11,7 @@ html > body {
   position: fixed;
   border-bottom: solid 1px $border-frame-color;
   background-color: #FFF;
+  z-index: 1000;
   .company-logo {
     position: absolute;
     height: 100%;
@@ -35,6 +36,7 @@ html > body {
   height: 50px;
   border-top: solid 1px $border-frame-color;
   background-color: #FFF;
+  z-index: 1000;
   .footer-copyright {
     height: 100%;
     text-align: center;
