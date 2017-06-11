@@ -15,7 +15,6 @@
     a {
       display: block;
       width: 100%;
-      height: 100%;
       font-size: 24px;
       color: $main-color;
       text-align: center;
@@ -23,26 +22,26 @@
   }
   .plan-list {
     margin: 35px auto 10px;
-    padding: 15px 0px;
+    padding: 15px 0;
     width: 100%;
     border: 2px solid $border-frame-color;
     border-radius: 4px;
     font-size: xx-small;
     .plan-left {
-      display: inline-block;
-      height: 100%;
       border-right: 1px solid $border-frame-color;
       .plan-kind {
-        display: block;
         width: 100%;
         padding: 5px 10px;
+        margin: 0;
         border-radius: 2px;
         color: #fff;
         background-color: $main-color;
       }
-      .plan-title {
-        display: block;
-        margin: 10px 20px;
+      .plan-titles {
+        margin: 10px 20px 20px 30px;
+        .plan-title {
+          margin: 0;
+        }
         .plan-title-no {
           color: $main-color;
           margin-right: 5px;
@@ -52,7 +51,7 @@
         text-align: right;
         > a {
           display: inline-block;
-          padding: 10px 0px;
+          padding: 10px 0;
           width: 30%;
           border-radius: 5px;
           text-align: center;
@@ -60,13 +59,64 @@
       }
       .plan-edit {
         margin-right: 10px;
-        color: $edit-color;
-        border: 2px solid $edit-color;
+        color: #108ec1;
+        border: 2px solid #108ec1;
       }
       .plan-delete {
-        color: $delete-color;
-        border: 2px solid $delete-color;
+        color: #f15a24;
+        border: 2px solid #f15a24;
       }
+    }
+    .plan-right {
+      .plan-details {
+        margin: 20px 0 10px 60px;
+        color: $text-base-color;
+        .plane-order {
+          margin: 0;
+        }
+        .plan-price {
+          margin: 0;
+          .plan-ccy {
+            font-size: x-small;
+          }
+          .plan-mony {
+            color: #000;
+            font-size: large;
+            font-weight: bold;
+          }
+          .plan-tax {
+            font-size: xx-small;
+          }
+        }
+      }
+      .plan-proposal {
+        width: 90%;
+        padding: 10px 0;
+        margin: 0 auto;
+        line-height: 100%;
+        border-radius: 5px;
+        background-color: #dc1e54;
+        box-shadow: 0 4px #ccc;
+        a {
+          display: block;
+          width: 100%;
+          color: #fff;
+          text-align: center;
+        }
+        img {
+          position: absolute;          
+          margin-left: 80px;
+          width: 8px;
+        }        
+      }
+    }
+  }
+  .create-datetime {
+    font-size: 8px;
+    color: $text-base-color;
+    .create {
+      margin-right: 10px;
+      font-weight: bold;
     }
   }
 }
