@@ -8,6 +8,7 @@ var distPath = path.resolve(pkg.path.dist);
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var sass = require('gulp-sass');
+var sassGlob = require('gulp-sass-glob')
 var autoprefixer = require('gulp-autoprefixer');
 var plumber = require('gulp-plumber');
 var webserver = require('gulp-webserver');
@@ -43,6 +44,7 @@ gulp.task('js', function() {
 gulp.task('sass', function() {
     return gulp.src(path.join(assetsPath, 'css/*.scss'))
         .pipe(plumber({errorHandler: notify.onError('<%= error.message %>')}))
+        .pipe(sassGlob())
         .pipe(sass({outputStyle: 'expanded'}))
         .pipe(autoprefixer())
         .pipe(concat('main.css'))

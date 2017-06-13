@@ -1,6 +1,3 @@
-@import 'src/shared/colors';
-@import 'src/shared/size';
-@import 'src/shared/common';
-@import 'src/top';
-@import 'src/proposals';
+@import 'src/shared/*';
+@import 'src/*';
 @import '../../node_modules/bootstrap/scss/bootstrap';
