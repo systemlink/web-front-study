@@ -1,0 +1,157 @@
+#proposals-page-container {
+  margin-top: 70px;
+  margin-bottom: 150px;
+  overflow: hidden;
+
+  .create-plan {
+    margin: 20px auto 10px;
+    padding: 15px;
+    width: 100%;
+    border: 2px solid $border-frame-color;
+    border-radius: 4px;
+
+    img {
+      margin-right: 10px;
+      width: 20px;
+    }
+
+    a {
+      display: block;
+      width: 100%;
+      font-size: 24px;
+      color: $main-color;
+      text-align: center;
+    }
+  }
+
+  .plan-list {
+    margin: 35px auto 10px;
+    padding: 15px 0;
+    width: 100%;
+    border: 2px solid $border-frame-color;
+    border-radius: 4px;
+    font-size: xx-small;
+
+    .left {
+      @media screen and (min-width: 768px) {
+        border-right: 1px solid $border-frame-color;
+      }
+
+      .kind {
+        width: 100%;
+        padding: 5px 10px;
+        margin: 0;
+        border-radius: 2px;
+        color: #fff;
+        background-color: $main-color;
+      }
+
+      .titles {
+        margin: 10px 20px 20px 30px;
+
+        .title {
+          margin: 0;
+        }
+
+        .title-no {
+          color: $main-color;
+          margin-right: 5px;
+        }
+      }
+
+      .buttom {
+        text-align: right;
+
+        @media screen and (max-width: 767px) {
+          padding-bottom: 15px;
+        }
+
+        > a {
+          display: inline-block;
+          padding: 10px   0;
+          width: 30%;
+          border-radius: 5px;
+          text-align: center;
+        }
+      }
+
+      .edit {
+        margin-right: 10px;
+        color: #108ec1;
+        border: 2px solid #108ec1;
+      }
+
+      .delete {
+        color: #f15a24;
+        border: 2px solid #f15a24;
+      }
+    }
+
+    .right {
+      
+      @media screen and (max-width: 767px) {
+        border-top: 2px solid $border-frame-color;
+      }
+
+      .details {
+        margin: 20px 0 10px 60px;
+        color: $text-base-color;
+
+        .order {
+          margin: 0;
+        }
+
+        .price {
+          margin: 0;
+
+          .unit {
+            font-size: x-small;
+          }
+
+          .money {
+            color: #000;
+            font-size: large;
+            font-weight: bold;
+          }
+
+          .tax {
+            font-size: xx-small;
+          }
+        }
+      }
+
+      .proposal {
+        width: 90%;
+        padding: 10px 0;
+        margin: 0 auto;
+        line-height: 100%;
+        border-radius: 5px;
+        background-color: #dc1e54;
+        box-shadow: 0 4px #ccc;
+
+        a {
+          display: block;
+          width: 100%;
+          color: #fff;
+          text-align: center;
+        }
+
+        img {
+          position: absolute;          
+          margin-left: 80px;
+          width: 8px;
+        }
+      }
+    }
+  }
+
+  .create-datetime {
+    font-size: 8px;
+    color: $text-base-color;
+
+    .create {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+  }
+}
