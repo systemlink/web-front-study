@@ -68,7 +68,7 @@ gulp.task('build', [
 gulp.task('server', function() {
   return gulp.src('dist')
     .pipe(webserver({
-      host: 'localhost',
+      host: '0.0.0.0',
       port: 8000,
       livereload: true,
       fallback: 'top.html'
