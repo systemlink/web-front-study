@@ -25,5 +25,8 @@
   "path": {
     "assets": "./assets/",
     "dist": "./dist/"
+  },
+  "scripts": {
+    "start": "gulp"
   }
 }
