@@ -10,9 +10,16 @@
 npm install
 ```
 
-* cssファイル変更監視
+* Dockerのビルド
+
+初回またはDockerfileを変更した場合コマンドを実行
 ```
-gulp
+docker-compose build
+```
+
+* タスクランナー起動
+```
+docker-compose up
 ```
 
 * ブラウザでアクセス
