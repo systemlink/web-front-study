@@ -31,6 +31,18 @@ html > body {
       max-height: 45%;
     }
   }
+
+  .items-label {
+    margin-left: 10px;
+    color: $text-base-color;
+    font-size: xx-small;
+  }
+
+  .items-name {
+    margin-left: 5px;
+    color: #108ec1;
+    font-size: small;
+  }
 }
 
 #global-footer {

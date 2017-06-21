@@ -1,0 +1,33 @@
+#places-page-container {
+  margin-top: 70px;
+  margin-bottom: 150px;
+  overflow: hidden;
+
+  .navi {
+  }
+
+  .places {
+    .place-img {
+      text-align: center;
+      font-size: xx-small;
+
+      img {
+        width: 80%;
+      }
+
+      p {
+        margin: 20px 0;
+      }
+    }
+
+    .place-memo {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #eee;
+
+      p {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
