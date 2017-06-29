@@ -11,7 +11,7 @@ html > body {
   position: fixed;
   border-bottom: solid 1px $border-frame-color;
   background-color: #FFF;
-  z-index: 1000;
+  z-index: 100;
 
   .company-logo {
     position: absolute;
@@ -49,10 +49,9 @@ html > body {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 50px;
   border-top: solid 1px $border-frame-color;
   background-color: #FFF;
-  z-index: 1000;
+  z-index: 100;
 
   .footer-copyright {
     height: 100%;
@@ -65,5 +64,36 @@ html > body {
       font-size: x-small;
       color: $text-base-color;
     }
+  }
+}
+
+#places-footer {
+  @extend #global-footer;
+  position: absolute;
+  top: 840px;
+  bottom: auto;
+}
+
+#control-footer {
+  position: fixed;
+  padding-left: 50px;
+  padding-right: 50px;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+  border-top: solid 1px $border-frame-color;
+  background-color: #eee;
+  z-index: 1000;
+
+
+  .return {
+    width: 200px;
+    padding: 10px 0;
+    line-height: 100%;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px #ccc;
+    color: #000;
+    font-size: x-small;
   }
 }
