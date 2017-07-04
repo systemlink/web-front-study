@@ -70,30 +70,40 @@ html > body {
 #places-footer {
   @extend #global-footer;
   position: absolute;
-  top: 840px;
-  bottom: auto;
+  top: 900px;
 }
 
 #control-footer {
   position: fixed;
-  padding-left: 50px;
-  padding-right: 50px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
   bottom: 0;
-  height: 60px;
   width: 100%;
   border-top: solid 1px $border-frame-color;
   background-color: #eee;
   z-index: 1000;
 
-
   .return {
-    width: 200px;
-    padding: 10px 0;
-    line-height: 100%;
+    width: 180px;
+    margin: 10px 0;
     border-radius: 5px;
     background-color: #fff;
-    box-shadow: 0 2px #ccc;
+    box-shadow: 0 3px #ccc;
     color: #000;
-    font-size: x-small;
+    font-size: xx-small;
+    border: solid 1px $border-frame-color;
+    background-image: url("/images/btn_back_arrow.png");
+    background-position: left 26px center;
+    background-repeat: no-repeat;
+    background-size: auto 40%;
+  }
+
+  .next {
+    @extend .return;
+    background-color: #dc1e54;
+    color: #fff;
+    background-image: url("/images/btn_next_arrow_white.png");
+    background-position: right 26px center;
   }
 }
