@@ -1,7 +1,6 @@
 #places-page-container {
-  margin-top: 70px;
-  margin-bottom: 130px;
-  overflow: hidden;
+  padding-top: 70px;
+  padding-bottom: 130px;
 
   .navi-label {
     display: flex;
@@ -9,7 +8,7 @@
     margin-top: 30px;
     margin-bottom: 60px;
     font-size: 10px;
-    width: 100%;
+    width: 90%;
 
     p {
       display: inline-block;
@@ -92,20 +91,21 @@
         p {
           margin: 20px 0;
         }
-      }
 
-      .place:nth-of-type(1) {
-        .img:nth-child(1) .thumb {
-          background-image: url("/images/places_1_thumb.png");
+        &:nth-of-type(1) {
+          :nth-child(1) .thumb {
+            background-image: url("/images/places_1_thumb.png");
+          }
         }
-      }
 
-      .place:nth-of-type(2) {
-        .img:nth-child(1) .thumb {
-          background-image: url("/images/places_2_thumb.png");
-        }
-        .img:nth-child(2) .thumb {
-          background-image: url("/images/places_3_thumb.png");
+        &:nth-of-type(2) {
+          :nth-child(1) .thumb {
+            background-image: url("/images/places_2_thumb.png");
+          }
+
+          :nth-child(2) .thumb {
+            background-image: url("/images/places_3_thumb.png");
+          }
         }
       }
 
@@ -187,6 +187,7 @@
       .details-label {
         padding: 0;
         text-align: right;
+
         p {
           margin-bottom: 10px;
           color: $text-base-color;
@@ -195,4 +196,10 @@
       }
     }
   }
+}
+
+#places-footer {
+  @extend #global-footer;
+  position: absolute;
+  bottom: 0;
 }

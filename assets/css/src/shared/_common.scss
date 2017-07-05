@@ -67,12 +67,6 @@ html > body {
   }
 }
 
-#places-footer {
-  @extend #global-footer;
-  position: absolute;
-  top: 900px;
-}
-
 #control-footer {
   position: fixed;
   display: flex;
