@@ -1,0 +1,205 @@
+#places-page-container {
+  padding-top: 70px;
+  padding-bottom: 130px;
+
+  .navi-label {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    font-size: 10px;
+    width: 90%;
+
+    p {
+      display: inline-block;
+      position: relative;
+      margin-bottom: 5px;
+      text-align: center;
+      width: 10%;
+    }
+
+    .label::before {
+      content: "";
+      display: inline-block;
+      position: absolute; 
+      width: 12px;
+      height: 12px;
+      border: 2px solid #ccc;
+      border-radius: 50%;
+      background-color: #fff;
+      top: 25px;
+      left: 45%;
+      z-index: 10;
+    }
+
+    .label::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 100%;
+      height: 12px;
+      background-color: #ccc;
+      top: 25px;
+      left: 50%;
+    }
+  }
+  
+  .navi {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    font-size: 10px;
+
+    .point {
+      width: 12px;
+      height: 12px;
+      background-color: #ccc;
+      border-radius: 50%;
+    }
+
+    .fast {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background-color: #ccc;
+      border-radius: 50%;
+    }
+
+    .bar {
+      display: inline-block;
+      margin-left: 5%;
+      width: 60px;
+      height: 12px;
+      background-color: #ccc;
+    }
+  }
+  
+  .input {
+    .places {
+      .place {
+        padding: 30px 0;
+        text-align: center;
+        font-size: xx-small;
+
+        .thumb {
+          margin: 0 10%;
+          width: 80%;
+          height: 120px;
+          background-size: 100% 120px;
+        }
+        
+        p {
+          margin: 20px 0;
+        }
+
+        &:nth-of-type(1) {
+          :nth-child(1) .thumb {
+            background-image: url("/images/places_1_thumb.png");
+          }
+        }
+
+        &:nth-of-type(2) {
+          :nth-child(1) .thumb {
+            background-image: url("/images/places_2_thumb.png");
+          }
+
+          :nth-child(2) .thumb {
+            background-image: url("/images/places_3_thumb.png");
+          }
+        }
+      }
+
+      .place-memo {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #eee;
+        font-size: xx-small;
+        color: $text-base-color;
+
+        .memo {
+          font-size: xx-small;
+        }
+
+        p {
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    .preview {
+      padding: 0 50px;
+
+      .price {
+        text-align: right;
+
+        .tax {
+          margin-right: 5px;
+          font-size: xx-small;
+          color: $text-base-color;
+        }
+
+        .unit {
+          color: $text-base-color;
+        }
+
+        .money {
+          font-size: large;        
+        }
+      }
+
+      .preview-image {
+        margin-top: 10px;
+        height: 300px;
+        text-align: center;
+        background-image: url("/images/bg_outside.png");
+        border: 2px solid #ccc;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+
+        .description {
+          margin-top: 140px;
+          font-size: x-small;
+        }
+      }
+
+      .preview-details {
+        margin-top: 0;
+        height: 350px;
+        border: 2px solid #ccc;
+        border-top-style: none;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+
+      .details-top {
+        margin: 0;
+        padding: 30px 20px 10px 10px;
+        height: 45%;
+        border-bottom: 2px dotted #ccc;
+      }
+
+      .details-bottom {
+        margin: 0;
+        padding: 20px 20px 10px 10px;
+        height: 55%;
+      }
+
+      .details-label {
+        padding: 0;
+        text-align: right;
+
+        p {
+          margin-bottom: 10px;
+          color: $text-base-color;
+          font-size: xx-small;
+        }
+      }
+    }
+  }
+}
+
+#places-footer {
+  @extend #global-footer;
+  position: absolute;
+  bottom: 0;
+}

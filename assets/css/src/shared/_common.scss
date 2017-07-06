@@ -11,7 +11,7 @@ html > body {
   position: fixed;
   border-bottom: solid 1px $border-frame-color;
   background-color: #FFF;
-  z-index: 1000;
+  z-index: 100;
 
   .company-logo {
     position: absolute;
@@ -31,16 +31,27 @@ html > body {
       max-height: 45%;
     }
   }
+
+  .items-label {
+    margin-left: 10px;
+    color: $text-base-color;
+    font-size: xx-small;
+  }
+
+  .items-name {
+    margin-left: 5px;
+    color: #108ec1;
+    font-size: small;
+  }
 }
 
 #global-footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 50px;
   border-top: solid 1px $border-frame-color;
   background-color: #FFF;
-  z-index: 1000;
+  z-index: 100;
 
   .footer-copyright {
     height: 100%;
@@ -53,5 +64,40 @@ html > body {
       font-size: x-small;
       color: $text-base-color;
     }
+  }
+}
+
+#control-footer {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+  bottom: 0;
+  width: 100%;
+  border-top: solid 1px $border-frame-color;
+  background-color: #eee;
+  z-index: 1000;
+
+  .return {
+    width: 180px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 3px #ccc;
+    color: #000;
+    font-size: xx-small;
+    border: solid 1px $border-frame-color;
+    background-image: url("/images/btn_back_arrow.png");
+    background-position: left 26px center;
+    background-repeat: no-repeat;
+    background-size: auto 40%;
+  }
+
+  .next {
+    @extend .return;
+    background-color: #dc1e54;
+    color: #fff;
+    background-image: url("/images/btn_next_arrow_white.png");
+    background-position: right 26px center;
   }
 }
