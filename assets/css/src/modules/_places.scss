@@ -1,25 +1,66 @@
 #places-page-container {
   padding-top: 70px;
-  padding-bottom: 130px;
+  padding-bottom: 50px;
 
   .navi {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-    margin-bottom: 60px;
+    @media screen and (min-width: 768px) {
+      display: flex;
+    }
+
+    padding-top: 30px;
+    padding-bottom: 60px;
     font-size: 10px;
-    width: 90%;
+    width: 100%;
+
+    .navi-left {
+      display: flex;
+      position: relative;
+      justify-content: space-between;
+      margin-bottom: 30px;
+      width: 40%;
+
+      @media screen and (max-width: 767px) {
+        width: 100%;
+      }
+
+      p:last-child::after {
+        width: calc(100% - 8px);
+      }
+
+      .last {
+        position: absolute;
+        height: 8px;
+        width: 8px;
+        background-color: #ccc;
+        transform: rotate(45deg);
+        top: 27px;
+        left: calc(100% - 6px);
+      }      
+    }
+
+    .navi-right {
+      @extend .navi-left;
+      width: 60%;
+
+      @media screen and (max-width: 767px) {
+        width: 100%;
+      }
+    }
 
     .navi-label {
-      display: inline-block;
       position: relative;
-      margin-bottom: 5px;
       text-align: center;
-      width: 10%;
+      width: 100%;
+
+      .label {
+        position: absolute;
+        display: inline-block;
+        width: 100%;
+        left: calc(-50% + 6px); 
+      }
 
       &::before {
         content: "";
-        display: inline-block;
         position: absolute; 
         width: 12px;
         height: 12px;
@@ -27,150 +68,144 @@
         border-radius: 50%;
         background-color: #fff;
         top: 25px;
-        left: 45%;
+        left: 0;
         z-index: 10;
       }
 
       &::after {
         content: "";
-        display: inline-block;
         position: absolute;
         width: 100%;
         height: 12px;
         background-color: #ccc;
         top: 25px;
-        left: 50%;
+        left: 6px;
       }
+    }
 
-      &:nth-child(4)::after,
-      &:nth-child(10)::after {
-        content: "";
-        display: inline-block;
-        position: absolute;
-        width: calc(100% - 8px);
-        height: 12px;
-        background-color: #ccc;
-        top: 25px;
-        left: 50%;
+    .active {
+      color: #108ec1;
+
+      &::before {
+        width: 16px;
+        height: 16px;
+        top: 23px;
+        border: 4px solid #108ec1;
       }
+    }
 
-      .last {
-        display: inline-block;
-        position: absolute;
-        height: 8px;
-        width: 8px;
-        background-color: #ccc;
-        transform: rotate(45deg);
-        top: 27px;
-        right: calc(-50% + 4px);
-        z-index: 100; 
+    .passive {
+      &::before {
+        border-color: #108ec1;
+      }
+      
+      &::after {
+        background-color: #108ec1;
       }
     }
   }
-  
-  .input {
-    .places {
-      .place {
-        padding: 30px 0;
-        text-align: center;
-        font-size: xx-small;
 
-        .thumb {
-          margin: 0 10%;
-          width: 80%;
-          height: 120px;
-          background-size: 100% 120px;
-        }
-        
-        p {
-          margin: 20px 0;
-        }
+  .price {
+    text-align: right;
+
+    .tax {
+      margin-right: 5px;
+      font-size: xx-small;
+      color: $text-base-color;
+    }
+
+    .unit {
+      color: $text-base-color;
+    }
+
+    .money {
+      font-size: large;        
+    }
+  }
+
+  .places {
+    .place {
+      padding: 30px 0;
+      text-align: center;
+      font-size: xx-small;
+
+      .thumb {
+        margin: 0 10%;
+        width: 80%;
+        height: 120px;
+        background-size: 100% 120px;
       }
-
-      .place-memo {
-        margin-top: 20px;
-        padding: 10px;
-        background-color: #eee;
-        font-size: xx-small;
-        color: $text-base-color;
-
-        .memo {
-          font-size: xx-small;
-        }
-
-        p {
-          margin-bottom: 10px;
-        }
+      
+      p {
+        margin: 20px 0;
       }
     }
 
-    .preview {
-      padding: 0 50px;
+    .place-memo {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #eee;
+      font-size: xx-small;
+      color: $text-base-color;
 
-      .price {
-        text-align: right;
-
-        .tax {
-          margin-right: 5px;
-          font-size: xx-small;
-          color: $text-base-color;
-        }
-
-        .unit {
-          color: $text-base-color;
-        }
-
-        .money {
-          font-size: large;        
-        }
+      .memo {
+        font-size: xx-small;
       }
 
-      .preview-image {
-        margin-top: 10px;
-        height: 300px;
-        text-align: center;
-        background-image: url("/images/bg_outside.png");
-        border: 2px solid #ccc;
-        border-top-right-radius: 5px;
-        border-top-left-radius: 5px;
-
-        .description {
-          margin-top: 140px;
-          font-size: x-small;
-        }
+      p {
+        margin-bottom: 10px;
       }
+    }
+  }
 
-      .preview-details {
-        margin-top: 0;
-        height: 350px;
-        border: 2px solid #ccc;
-        border-top-style: none;
-        border-bottom-right-radius: 5px;
-        border-bottom-left-radius: 5px;
+  .preview {
+    padding: 0 50px;
+
+    .preview-image {
+      margin-top: 10px;
+      height: 300px;
+      text-align: center;
+      background-image: url("/images/bg_outside.png");
+      border: 2px solid #ccc;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+
+      .description {
+        margin-top: 140px;
+        font-size: x-small;
       }
+    }
 
-      .details-top {
-        margin: 0;
-        padding: 30px 20px 10px 10px;
-        height: 45%;
-        border-bottom: 2px dotted #ccc;
-      }
+    .preview-details {
+      margin-top: 0;
+      height: 350px;
+      border: 2px solid #ccc;
+      border-top-style: none;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
 
-      .details-bottom {
-        margin: 0;
-        padding: 20px 20px 10px 10px;
-        height: 55%;
-      }
+    .details-top {
+      margin: 0;
+      padding: 30px 20px 10px 10px;
+      height: 45%;
+      border-bottom: 2px dotted #ccc;
+    }
 
-      .details-label {
-        padding: 0;
-        text-align: right;
+    .details-bottom {
+      margin: 0;
+      padding: 20px 20px 10px 10px;
+      height: 55%;
+    }
 
-        p {
-          margin-bottom: 10px;
-          color: $text-base-color;
-          font-size: xx-small;
-        }
+    .details-label {
+      padding: 0;
+      text-align: right;
+
+      p {
+        margin-bottom: 10px;
+        color: $text-base-color;
+        font-size: xx-small;
       }
     }
   }
@@ -190,6 +225,7 @@
 
 #places-footer {
   @extend #global-footer;
-  position: absolute;
+  position: relative;
   bottom: 0;
+  padding-bottom: 50px;
 }

@@ -78,23 +78,25 @@ html > body {
   background-color: #eee;
   z-index: 1000;
 
-  .return {
+  .control-btn {
     width: 180px;
     margin: 10px 0;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0 3px #ccc;
-    color: #000;
     font-size: xx-small;
     border: solid 1px $border-frame-color;
-    background-image: url("/images/btn_back_arrow.png");
-    background-position: left 26px center;
+    border-radius: 5px;
+    box-shadow: 0 3px #ccc;
     background-repeat: no-repeat;
     background-size: auto 40%;
   }
 
+  .prev {
+    background-color: #fff;
+    color: #000;
+    background-image: url("/images/btn_back_arrow.png");
+    background-position: left 26px center;
+  }
+
   .next {
-    @extend .return;
     background-color: #dc1e54;
     color: #fff;
     background-image: url("/images/btn_next_arrow_white.png");
