@@ -16,18 +16,22 @@ var notify = require('gulp-notify');
 var runSequence = require('run-sequence');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
+var coffee = require('gulp-coffee');
+var coffeeify = require('coffeeify');
 
 gulp.task('watch', function() {
-  gulp.watch(path.join(assetsPath, 'js/**/*.js'),['js']);
+  gulp.watch(path.join(assetsPath, 'js/**/*.coffee'),['coffee']);
   gulp.watch(path.join(assetsPath, 'css/**/*.scss'),['sass']);
   gulp.watch('./html/**/*.html', ['static']);
   gulp.watch(path.join(assetsPath, 'images/*.*'), ['images']);
 });
 
-gulp.task('js', function() {
-  browserify({
-    entries: ['assets/js/application.js']
+gulp.task('coffee', function() {
+  return browserify({
+    entries: ['assets/js/application.coffee'],
+    extensions: ['.coffee', '.js']
   })
+  .transform('coffeeify')
   .bundle()
   .on('error', function() {
     notify.onError({
@@ -62,7 +66,7 @@ gulp.task('images', function() {
 });
 
 gulp.task('build', [
-  'js', 'sass', 'static', 'images'
+  'coffee', 'sass', 'static', 'images'
 ]);
 
 gulp.task('server', function() {
@@ -71,7 +75,7 @@ gulp.task('server', function() {
       host: '0.0.0.0',
       port: 8000,
       livereload: true,
-      fallback: 'top.html'
+      fallback: 'index.html'
     }))
 })
 
