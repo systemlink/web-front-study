@@ -1,0 +1,231 @@
+#places-page-container {
+  padding-top: 70px;
+  padding-bottom: 50px;
+
+  .navi {
+    @media screen and (min-width: 768px) {
+      display: flex;
+    }
+
+    padding-top: 30px;
+    padding-bottom: 60px;
+    font-size: 10px;
+    width: 100%;
+
+    .navi-left {
+      display: flex;
+      position: relative;
+      justify-content: space-between;
+      margin-bottom: 30px;
+      width: 40%;
+
+      @media screen and (max-width: 767px) {
+        width: 100%;
+      }
+
+      p:last-child::after {
+        width: calc(100% - 8px);
+      }
+
+      .last {
+        position: absolute;
+        height: 8px;
+        width: 8px;
+        background-color: #ccc;
+        transform: rotate(45deg);
+        top: 27px;
+        left: calc(100% - 6px);
+      }      
+    }
+
+    .navi-right {
+      @extend .navi-left;
+      width: 60%;
+
+      @media screen and (max-width: 767px) {
+        width: 100%;
+      }
+    }
+
+    .navi-label {
+      position: relative;
+      text-align: center;
+      width: 100%;
+
+      .label {
+        position: absolute;
+        display: inline-block;
+        width: 100%;
+        left: calc(-50% + 6px); 
+      }
+
+      &::before {
+        content: "";
+        position: absolute; 
+        width: 12px;
+        height: 12px;
+        border: 2px solid #ccc;
+        border-radius: 50%;
+        background-color: #fff;
+        top: 25px;
+        left: 0;
+        z-index: 10;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 12px;
+        background-color: #ccc;
+        top: 25px;
+        left: 6px;
+      }
+    }
+
+    .active {
+      color: #108ec1;
+
+      &::before {
+        width: 16px;
+        height: 16px;
+        top: 23px;
+        border: 4px solid #108ec1;
+      }
+    }
+
+    .passive {
+      &::before {
+        border-color: #108ec1;
+      }
+      
+      &::after {
+        background-color: #108ec1;
+      }
+    }
+  }
+
+  .price {
+    text-align: right;
+
+    .tax {
+      margin-right: 5px;
+      font-size: xx-small;
+      color: $text-base-color;
+    }
+
+    .unit {
+      color: $text-base-color;
+    }
+
+    .money {
+      font-size: large;        
+    }
+  }
+
+  .places {
+    .place {
+      padding: 30px 0;
+      text-align: center;
+      font-size: xx-small;
+
+      .thumb {
+        margin: 0 10%;
+        width: 80%;
+        height: 120px;
+        background-size: 100% 120px;
+      }
+      
+      p {
+        margin: 20px 0;
+      }
+    }
+
+    .place-memo {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #eee;
+      font-size: xx-small;
+      color: $text-base-color;
+
+      .memo {
+        font-size: xx-small;
+      }
+
+      p {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .preview {
+    padding: 0 50px;
+
+    .preview-image {
+      margin-top: 10px;
+      height: 300px;
+      text-align: center;
+      background-image: url("/images/bg_outside.png");
+      border: 2px solid #ccc;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+
+      .description {
+        margin-top: 140px;
+        font-size: x-small;
+      }
+    }
+
+    .preview-details {
+      margin-top: 0;
+      height: 350px;
+      border: 2px solid #ccc;
+      border-top-style: none;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    .details-top {
+      margin: 0;
+      padding: 30px 20px 10px 10px;
+      height: 45%;
+      border-bottom: 2px dotted #ccc;
+    }
+
+    .details-bottom {
+      margin: 0;
+      padding: 20px 20px 10px 10px;
+      height: 55%;
+    }
+
+    .details-label {
+      padding: 0;
+      text-align: right;
+
+      p {
+        margin-bottom: 10px;
+        color: $text-base-color;
+        font-size: xx-small;
+      }
+    }
+  }
+
+  .living-thumb {
+    background-image: url("/images/places_1_thumb.png");
+  }
+
+  .single-bath-thumb {
+    background-image: url("/images/places_2_thumb.png");
+  }
+
+  .multh-bath-thumb {
+    background-image: url("/images/places_3_thumb.png");
+  }
+}
+
+#places-footer {
+  @extend #global-footer;
+  position: relative;
+  bottom: 0;
+  padding-bottom: 50px;
+}
