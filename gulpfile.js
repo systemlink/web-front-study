@@ -29,9 +29,8 @@ gulp.task('watch', function() {
 gulp.task('coffee', function() {
   return browserify({
     entries: ['assets/js/application.coffee'],
-    extensions: ['.coffee', '.js']
+    extensions: ['.coffee']
   })
-  .transform('coffeeify')
   .bundle()
   .on('error', function() {
     notify.onError({
