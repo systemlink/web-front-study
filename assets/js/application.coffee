@@ -1,21 +1,27 @@
-global.Vue = require 'vue'
-global.VueRouter = require 'vue-router'
-Vue.use VueRouter
-Foo = template: '<div>foo</div>'
-Bar = template: '<div>bar</div>'
-routes = [
-  {
-    path: '/'
-    component: Vue.extend(require "./pages/top/index")
-  }
-  {
-    path: '/foo'
-    component: Foo
-  }
-  {
-    path: '/bar'
-    component: Bar
-  }
-]
-router = new VueRouter(routes: routes)
-app = new Vue(router: router).$mount('#app')
+window.onload = ->
+  Vue = require('vue')
+  VueRouter = require('vue-router')
+  Validator = require("vue-validator");
+  Vue.use VueRouter
+  Vue.use Validator
+  Top = require('./component/top.vue')
+  Proposals = require('./component/proposals.vue')
+  Places = require('./component/places.vue')
+  routes = [
+    {
+      path: '/proposals'
+      component: Proposals
+    }
+    {
+      path: '/places'
+      component: Places
+    }
+  ]
+  router = new VueRouter(
+    mode: 'history'
+    routes: routes)
+  app = new Vue(
+    router: router,
+    render: (h) -> h(Top)
+  ).$mount('#app')
+  return
